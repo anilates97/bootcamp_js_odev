@@ -997,8 +997,10 @@ let productName = "";
 let countDiscontinued = 0;
 //soru#6
 let maxPrice = 0;
+let mostExpensiveProduct = "";
 //soru#7
 let minPrice = Number.MAX_VALUE;
+let cheapestProduct = "";
 
 //Soru 2
 console.log("Soru#2");
@@ -1038,12 +1040,14 @@ for (let product of products) {
 
   //Soru 6
   if (product.unitPrice > maxPrice) {
-    maxPrice = Math.max(maxPrice, product.unitPrice);
+    maxPrice = product.unitPrice;
+    mostExpensiveProduct = product;
   }
 
   //Soru 7
   if (product.unitPrice < minPrice) {
-    minPrice = Math.min(maxPrice, product.unitPrice);
+    minPrice = product.unitPrice;
+    cheapestProduct = product;
   }
 }
 
@@ -1069,11 +1073,11 @@ ansContainer.appendChild(divFive);
 console.log(countDiscontinued);
 
 console.log("Soru#6");
-divSix.innerText = "Soru#6 : " + maxPrice;
+divSix.innerText = "Soru#6 : " + mostExpensiveProduct.name;
 ansContainer.appendChild(divSix);
-console.log(maxPrice);
+console.log(mostExpensiveProduct.name);
 
 console.log("Soru#7");
-divSeven.innerText = "Soru#7 : " + minPrice;
+divSeven.innerText = "Soru#7 : " + cheapestProduct.name;
 ansContainer.appendChild(divSeven);
-console.log(minPrice);
+console.log(cheapestProduct.name);
