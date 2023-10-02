@@ -8,7 +8,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid gray; /* Kenarlık eklemek için */
+  border: 1px solid gray;
 }
 
 .answers-container div {
